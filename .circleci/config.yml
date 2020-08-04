@@ -129,8 +129,8 @@ workflows:
       - aws-eks/create-cluster:
           cluster-name: eks-orb-demo-app-deployment
           aws-region: $AWS_DEFAULT_REGION
-          requires:
-            - build-and-push-image
+          # requires:
+          #   - build-and-push-image
       # - deploy-application:
       #     cluster-name: eks-orb-demo-app-deployment
       #     aws-region: $AWS_DEFAULT_REGION
@@ -155,4 +155,5 @@ workflows:
           aws-region: $AWS_DEFAULT_REGION
           wait: true
           requires:
-            - undeploy-application
+            # - undeploy-application
+            - aws-eks/create-cluster
