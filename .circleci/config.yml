@@ -6,10 +6,10 @@ workflows:
   create-then-delete:
     jobs:
       - aws-eks/create-cluster:
-          cluster-name: eks-orb-demo
+          cluster-name: eks-orb-demo-1
           aws-region: $AWS_DEFAULT_REGION
       - aws-eks/delete-cluster:
-          cluster-name: eks-orb-demo
+          cluster-name: eks-orb-demo-1
           aws-region: $AWS_DEFAULT_REGION
           wait: true
           requires:
